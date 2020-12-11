@@ -1,0 +1,37 @@
+
+<div class="box">
+  <div class="box-inner">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+      <h1>新規登録</h1>
+        <div class="box-email">
+        <%= f.label :nickname, "ニックネーム" %><br />
+        <%= f.text_field :nickname %>
+      </div>
+      <div class="box-email">
+        <%= f.label :email, "Eメール" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <div class="box-password">
+        <div class="a-row">
+          <div class="column-left">
+            <%= f.label :password, "パスワード" %>
+          </div>
+          <div class="column-right">
+            <%= link_to "パスワードを忘れた場合", new_user_password_path %>
+          </div>
+        </div>
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+      <div class="box-login">
+        <%= f.submit "新規登録" %>
+        <div class="legal-text">
+          続行することで、Campsiteの
+          <%= link_to "利用規約", "#" %>
+          および
+          <%= link_to "プライバシー規約", "#" %>
+          に同意するものとみなされます。
+        </div>    
+      </div>
+    <% end %>
+</div>
