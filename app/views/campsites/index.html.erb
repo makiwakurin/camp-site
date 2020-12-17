@@ -32,6 +32,9 @@
         </li>
         </ul>
         <%end%>
+        <%# <%= link_to   item_path(item.id)  %> 
+        <div class='item-img-content'>
+         <%= image_tag campsite.image, class: "item-img" if campsite.image.attached? %>
         </div>
         <%end%>
         <div class='item-info'>
@@ -39,6 +42,7 @@
             <%= "⭐️SITE NAME"  %><br>
             <%= campsite.name  %><br><br>
             <%="⭐️施設情報" %><br><br>
+            <%= campsite.name %><br>
             <%= campsite.text %>
           </h3>
           <%end %>
