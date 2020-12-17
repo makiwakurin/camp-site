@@ -1,6 +1,7 @@
 class CampsitesController < ApplicationController
 
   def index
+    @campsites = Campsite.all
   end
 
   def new
@@ -8,6 +9,7 @@ class CampsitesController < ApplicationController
   end
 
   def create
+    # binding.pry
     @campsite = Campsite.new(campsite_params)
     if @campsite.save
       redirect_to root_path
@@ -19,7 +21,7 @@ class CampsitesController < ApplicationController
   private 
 
   def campsite_params
-    params.require(:campsite).permit(:name, :text)
+    params.require(:campsite).permit(:name, :text, :image).merge(user_id: current_user.id)
   end
 
 end
