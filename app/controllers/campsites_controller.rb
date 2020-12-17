@@ -1,5 +1,7 @@
 class CampsitesController < ApplicationController
 
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @campsites = Campsite.all
   end
@@ -29,6 +31,15 @@ class CampsitesController < ApplicationController
 
   def edit
     @campsite = Campsite.find(params[:id])
+  end
+
+  def update
+    @campsite = Campsite.find(params[:id])
+    if @campsite.update(campsite_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def show

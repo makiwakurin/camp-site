@@ -1,18 +1,18 @@
 <div class="contents row">
-  <div class="content_post" >
+  <%# <div class="content_post" > %>
     <div class="more">
-   <%= image_tag @campsite.image %>
+   <%= image_tag @campsite.image.variant(resize: '400x500') %>
       <ul class="more_list">
         <li>
-          <%# <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get %> %>
+          <%# <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get %> 
         </li>
         <li>
-          <%# <%= link_to '削除', tweet_path(@tweet.id), method: :delete %> %>
+          <%# <%= link_to '削除', tweet_path(@tweet.id), method: :delete %> 
         </li>
       </ul>
     </div>
-    <p><%= @campsite.text %></p>
-    <span class="name"><%= @campsite.name %>
+    <span class="name"><%= @campsite.name %></span><br>
+    <span class="name"><%= @campsite.text %>
     </span>
   </div>
 </div>
