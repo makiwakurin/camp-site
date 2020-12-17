@@ -3,6 +3,7 @@
     <div class="more">
    <%= image_tag @campsite.image.variant(resize: '400x500') %>
       <ul class="more_list">
+      <%if user_signed_in?%>
         <li>
           <%= link_to '編集', edit_campsite_path(@campsite.id), method: :get %>
         </li>
@@ -10,6 +11,7 @@
           <%= link_to '削除', campsite_path(@campsite.id), method: :delete %> 
         </li>
       </ul>
+      <%end%>
     </div>
       <div class='item-info'>
           <h3 class='item-name'>
