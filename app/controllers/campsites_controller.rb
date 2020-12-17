@@ -18,6 +18,19 @@ class CampsitesController < ApplicationController
     end
   end
 
+  def destroy
+    @campsite = Campsite.find(params[:id])
+   if @campsite.destroy
+    redirect_to root_path
+   else
+    render :index
+   end
+  end
+
+  def edit
+    @campsite = Campsite.find(params[:id])
+  end
+
   def show
     @campsite = Campsite.find(params[:id])
   end

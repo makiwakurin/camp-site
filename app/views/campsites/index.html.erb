@@ -22,6 +22,14 @@
         <%= link_to   campsite_path(campsite.id), method: :get do %> 
         <div class='item-img-content'>
          <%= image_tag campsite.image, class: "item-img" if campsite.image.attached? %>
+         <ul class="more_list">
+        <li>
+          <%= link_to '編集', edit_campsite_path(campsite.id), method: :get %>
+        </li>
+        <li>
+          <%= link_to '削除', campsite_path(campsite.id), method: :delete  %>
+        </li>
+        </ul>
         </div>
         <%end%>
         <div class='item-info'>
