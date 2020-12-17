@@ -21,8 +21,9 @@
       <li class='list'>
         <%# <%= link_to   item_path(item.id)  %> %>
         <div class='item-img-content'>
-          <%# <%= image_tag , class: "item-img" %> %>
+         <%# <%= image_tag @campsite.image, class: "item-img" if @campsite.image.attached? %> %>
         </div>
+        <%# <%end%> %>
         <div class='item-info'>
           <h3 class='item-name'>
             <%# <%= item.name %> %>

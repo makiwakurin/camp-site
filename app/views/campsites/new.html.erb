@@ -2,6 +2,16 @@
   <div class="container">
     <h3>シェアする</h3>
     <%= form_with(model: @campsite, local: true) do |f| %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        <span class="indispensable">画像を選択してください</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
       <%= f.text_field :name, placeholder: "campsite name" %>
       <%= f.text_area :text, placeholder: "text", rows: "10" %>
       <%= f.submit "シェアする" %>
