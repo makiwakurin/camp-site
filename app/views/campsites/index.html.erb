@@ -11,28 +11,29 @@
 
     <div class="contents">
       <div class="first-view">
-        <%= image_tag  "baby.jpg", alt: "トップ画面", class: "top-image" %>
+        <%= image_tag  "富士山.jpg", alt: "トップ画面", class: "top-image" %>
       </div>
       <%# 商品一覧 %>
   <div class='item-contents'>
     <h1 class='title'>キャンプ場一覧</h1>
     <ul class='item-lists'>
-      <%# <% @campsites.each do |campsite| %>  %>
+      <% @campsites.each do |campsite| %>
       <li class='list'>
-        <%# <%= link_to   item_path(item.id)  %> %>
+        <%# <%= link_to   item_path(item.id)  %> 
         <div class='item-img-content'>
-          <%# <%= image_tag , class: "item-img" %> %>
+         <%= image_tag campsite.image, class: "item-img" if campsite.image.attached? %>
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
-            <%# <%= item.name %> %>
+            <%= campsite.name %><br>
+            <%= campsite.text %>
           </h3>
-          <%# <%end%> %>
+          <%end %>
           <div class='item-price'>
-            <span><%= %>円<br>(税込み)<br><%= %></span> 
+            <span><%= %><br><br><%= %></span> 
             <div class='star-btn'>
-              <%# <%= image_tag "star.png", class:"star-icon" %> %>
-              <span class='star-count'>0</span>
+              <%# <%= image_tag "star.png", class:"star-icon" %> 
+              <span class='star-count'></span>
             </div>
           </div>
         </div>
