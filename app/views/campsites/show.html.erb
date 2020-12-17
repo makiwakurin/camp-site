@@ -1,4 +1,25 @@
 <div class="contents row">
+  <%# <div class="content_post" > %>
+    <div class="more">
+   <%= image_tag @campsite.image.variant(resize: '400x500') %>
+      <ul class="more_list">
+        <li>
+          <%= link_to '編集', edit_campsite_path(@campsite.id), method: :get %>
+        </li>
+        <li>
+          <%= link_to '削除', campsite_path(@campsite.id), method: :delete %> 
+        </li>
+      </ul>
+    </div>
+      <div class='item-info'>
+          <h3 class='item-name'>
+            <%= "⭐️SITE NAME"  %><br>
+            <%= @campsite.name  %><br><br>
+            <%="⭐️施設情報" %><br><br>
+            <%= @campsite.text %>
+          </h3>  
+      </div>
+    </div>
   <div class="content_post" style="background-image: url(<%= @tweet.image %>);">
     <div class="more">
       <span><%= image_tag 'arrow_top.png' %></span>
@@ -15,4 +36,4 @@
     <span class="name"><%= @tweet.name %>
     </span>
   </div>
-</div>
+</div
