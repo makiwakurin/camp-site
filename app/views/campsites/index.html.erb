@@ -1,9 +1,70 @@
-<h1>トップページ</h1>
-<% if user_signed_in? %>
-<%= "#{current_user.nickname}さんは、ログインしています" %>
-<br>
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
-<%else%>
-<%= link_to "新規登録", new_user_registration_path %>
-<%= link_to 'ログイン',  new_user_session_path %>
-<%end%>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="toppage.css">
+    <title>Camp Site</title>
+  </head>
+  <body>
+    <header>
+    
+    </header>
+
+    <div class="contents">
+      <div class="first-view">
+        <%= image_tag  "baby.jpg", alt: "トップ画面", class: "top-image" %>
+      </div>
+      <div class="upper-content">
+        <h2 class="heading-name">おすすめのキャンプ場</h2>
+        <ul class="messages">
+          <li class="message">
+            <div class="message-date">関東エリア</div>
+            <div>カンパーニャ嬬恋<b>最強</b></div>
+          </li>
+          <li class="message">
+            <div class="message-date">2019/10/03</div>
+            <div>うれしい<b>ポイントアップキャンペーン</b></div>
+          </li>
+          <li class="message">
+            <div class="message-date">2019/09/27</div>
+            <div>2020年成人式 ご予約承ります</div>
+          </li>
+          <li class="message">
+            <div class="message-date">2018/10/03</div>
+            <div>うれしい<b>ポイントアップキャンペーン</b></div>
+          </li>
+          <li class="message">
+            <div class="message-date">2018/09/27</div>
+            <div>2019年成人式 ご予約承ります</div>
+          </li>
+        </ul>
+      </div>
+      <div class="middle-content">
+        <h2 class="heading-name">スタイリスト紹介</h2>
+        <ul class="stylist-list">
+          <li>
+            <img src="images/staff1.jpg" alt="staff1" class="stylist-image">
+            <h4 class="stylist-name">鈴木</h4>
+          </li>
+          <li>
+            <img src="images/staff2.jpg" alt="staff2" class="stylist-image">
+            <h4 class="stylist-name">佐藤</h4>
+          </li>
+          <li>
+            <img src="images/staff3.jpg" alt="staff3" class="stylist-image">
+            <h4 class="stylist-name">山田</h4>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bottom-content">
+        <form class="contact-form">
+          <h2 class="heading-name">メールで予約</h2>
+          <input type="text" placeholder="name" class="small-field">
+          <input type="text" placeholder="e-mail" class="small-field">
+          <textarea placeholder="message" class="large-field"></textarea>
+          <input type="submit" value="SEND" class="send">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
