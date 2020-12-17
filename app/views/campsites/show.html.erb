@@ -4,15 +4,19 @@
    <%= image_tag @campsite.image.variant(resize: '400x500') %>
       <ul class="more_list">
         <li>
-          <%# <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get %> 
+          <%= link_to '編集', edit_campsite_path(@campsite.id), method: :get %>
         </li>
         <li>
-          <%# <%= link_to '削除', tweet_path(@tweet.id), method: :delete %> 
+          <%= link_to '削除', campsite_path(@campsite.id), method: :delete %> 
         </li>
       </ul>
     </div>
-    <span class="name"><%= @campsite.name %></span><br>
-    <span class="name"><%= @campsite.text %>
-    </span>
-  </div>
-</div>
+      <div class='item-info'>
+          <h3 class='item-name'>
+            <%= "⭐️SITE NAME"  %><br>
+            <%= @campsite.name  %><br><br>
+            <%="⭐️施設情報" %><br><br>
+            <%= @campsite.text %>
+          </h3>  
+      </div>
+    </div>

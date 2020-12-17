@@ -1,5 +1,5 @@
 class CampsitesController < ApplicationController
-
+  before_action :set_campsite, only:[:destroy, :edit, :update, :show]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -21,7 +21,6 @@ class CampsitesController < ApplicationController
   end
 
   def destroy
-    @campsite = Campsite.find(params[:id])
    if @campsite.destroy
     redirect_to root_path
    else
@@ -30,11 +29,9 @@ class CampsitesController < ApplicationController
   end
 
   def edit
-    @campsite = Campsite.find(params[:id])
   end
 
   def update
-    @campsite = Campsite.find(params[:id])
     if @campsite.update(campsite_params)
       redirect_to root_path
     else
@@ -43,13 +40,16 @@ class CampsitesController < ApplicationController
   end
 
   def show
-    @campsite = Campsite.find(params[:id])
   end
 
   private 
 
   def campsite_params
     params.require(:campsite).permit(:name, :text, :image).merge(user_id: current_user.id)
+  end
+
+  def set_campsite
+    @campsite = Campsite.find(params[:id])
   end
 
 end
