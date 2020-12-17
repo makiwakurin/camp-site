@@ -18,6 +18,10 @@ class CampsitesController < ApplicationController
     end
   end
 
+  def show
+    @campsite = Campsite.find(params[:id])
+  end
+
   private 
 
   def campsite_params

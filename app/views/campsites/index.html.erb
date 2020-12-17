@@ -19,10 +19,11 @@
     <ul class='item-lists'>
       <% @campsites.each do |campsite| %>
       <li class='list'>
-        <%# <%= link_to   item_path(item.id)  %> 
+        <%= link_to   campsite_path(campsite.id), method: :get do %> 
         <div class='item-img-content'>
          <%= image_tag campsite.image, class: "item-img" if campsite.image.attached? %>
         </div>
+        <%end%>
         <div class='item-info'>
           <h3 class='item-name'>
             <%= campsite.name %><br>

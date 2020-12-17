@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "campsites#index"
-  resources :campsites, only: [:index, :new, :create, :show]
+  resources :campsites, only: [:index, :new, :create, :show, :edit, :update]
 end
