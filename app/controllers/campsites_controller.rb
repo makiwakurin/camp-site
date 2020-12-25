@@ -11,9 +11,10 @@ class CampsitesController < ApplicationController
   end
 
   def create
-    # binding.pry
     @campsite = Campsite.new(campsite_params)
-    if @campsite.save
+    # binding.pry
+    if @campsite.valid?
+       @campsite.save
       redirect_to root_path
     else
       render :new
