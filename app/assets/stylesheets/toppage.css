@@ -51,12 +51,14 @@ li {
 }
 
 .first-view {
+  display: flex;
   height: 60vh;
+  justify-content: center;
 }
 
 .top-image {
   height: 100%;
-  width: 100%;
+  width: 50%;
 }
 
 /* 新着情報 */
@@ -246,7 +248,7 @@ footer {
 }
 
 .title {
-  color: rgb(94, 255, 0);
+  color: tan;
 }
 
 .star-btn {
@@ -265,3 +267,24 @@ footer {
 }
 
 /* //商品一覧 */
+
+/* genreのcss */
+
+.genre-select{
+  height: 30px;
+  width: 250px;
+}
+
+.btn {
+  width: 200px;
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid white;
+  background-color: orange;
+  color: white;
+}
+
+.campname {
+  font-size: large;
+
+}
