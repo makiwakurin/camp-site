@@ -46,7 +46,7 @@ class CampsitesController < ApplicationController
   private 
 
   def campsite_params
-    params.require(:campsite).permit(:name, :text, :image).merge(user_id: current_user.id)
+    params.require(:campsite).permit(:name, :text, :image, :genre_id).merge(user_id: current_user.id)
   end
 
   def set_campsite
