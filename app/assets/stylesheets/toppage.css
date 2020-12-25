@@ -51,12 +51,14 @@ li {
 }
 
 .first-view {
+  display: flex;
   height: 60vh;
+  justify-content: center;
 }
 
 .top-image {
   height: 100%;
-  width: 100%;
+  width: 50%;
 }
 
 /* 新着情報 */
@@ -280,4 +282,9 @@ footer {
   border: 1px solid white;
   background-color: orange;
   color: white;
+}
+
+.campname {
+  font-size: large;
+
 }

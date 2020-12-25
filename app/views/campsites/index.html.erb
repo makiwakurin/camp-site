@@ -11,7 +11,7 @@
 
     <div class="contents">
       <div class="first-view">
-        <%= image_tag  "富士山.jpg", alt: "トップ画面", class: "top-image" %>
+        <%= image_tag  "トップページイラスト.png", alt: "トップ画面", class: "top-image" %>
       </div>
       <%# 商品一覧 %>
   <div class='item-contents'>
@@ -27,9 +27,11 @@
         <%end%>
         <div class='item-info'>
           <h3 class='item-name'>
+           <%= "⭐️キャンプ場 style" %><br>
+            <%= campsite.genre.name %><br><br>
             <%= "⭐️SITE NAME"  %><br>
             <%= campsite.name  %><br><br>
-            <%="⭐️施設情報" %><br><br>
+            <%="⭐️サイト情報" %><br>
             <%= campsite.text %>
           </h3>
           <%end %>
