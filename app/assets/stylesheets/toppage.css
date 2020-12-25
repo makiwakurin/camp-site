@@ -265,3 +265,19 @@ footer {
 }
 
 /* //商品一覧 */
+
+/* genreのcss */
+
+.genre-select{
+  height: 30px;
+  width: 250px;
+}
+
+.btn {
+  width: 200px;
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid white;
+  background-color: orange;
+  color: white;
+}

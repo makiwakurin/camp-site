@@ -12,7 +12,6 @@ class CampsitesController < ApplicationController
 
   def create
     @campsite = Campsite.new(campsite_params)
-    # binding.pry
     if @campsite.valid?
        @campsite.save
       redirect_to root_path
