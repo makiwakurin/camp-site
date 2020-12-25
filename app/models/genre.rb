@@ -6,4 +6,8 @@ class Genre < ActiveHash::Base
     { id: 4, name: '首都圏近郊' },
     { id: 5, name: 'ファミリー向け' }
   ]
+
+  include ActiveHash::Associations
+  has_many :Campsites
+  
   end
