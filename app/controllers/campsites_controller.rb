@@ -1,6 +1,7 @@
 class CampsitesController < ApplicationController
   before_action :set_campsite, only:[:destroy, :edit, :update, :show]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :search_category_campsite, only: [:index, :category, :new, :show, :edit]
 
   def index
     @campsites = Campsite.all
@@ -12,6 +13,7 @@ class CampsitesController < ApplicationController
 
   def create
     @campsite = Campsite.new(campsite_params)
+    # binding.pry
     if @campsite.valid?
        @campsite.save
       redirect_to root_path
@@ -42,14 +44,28 @@ class CampsitesController < ApplicationController
   def show
   end
 
+  def category
+    @campsite = @q.result
+    status_id = params[:q][:status_id_eq]
+    @status = Status.find_by(id: status_id)
+  end
+
+  def search
+    @campsites = Campsite.search(params[:keyword])
+  end
+
   private 
 
   def campsite_params
-    params.require(:campsite).permit(:name, :text, :image, :genre_id).merge(user_id: current_user.id)
+    params.require(:campsite).permit(:name, :text, :image, :genre_id, :prefecture_id, :status_id).merge(user_id: current_user.id)
   end
 
   def set_campsite
     @campsite = Campsite.find(params[:id])
+  end
+
+  def search_category_campsite
+    @q = Campsite.ransack(params[:q])
   end
 
 end

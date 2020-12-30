@@ -1,0 +1,31 @@
+<%# # 実装に必要な部分のみ記載しています %>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="toppage.css">
+  </head>
+<body>
+<h2>カテゴリー <%= @status.name %></h2>
+<div class='item-contents'>
+    <ul class='item-lists'>
+        <% @campsite.each do |campsite| %>
+      <li class='list'>
+        <%= link_to   campsite_path(campsite.id), method: :get do %> 
+        <div class='item-img-content'>
+         <%= image_tag campsite.image, class: "item-img" if campsite.image.attached? %>
+         <ul class="more_list">
+        </div>
+        <%end%>
+          <div class='item-info'>
+          <h3 class='item-name'>
+            <%= "⭐️SITE NAME"  %><br>
+            <%= campsite.name  %><br><br>
+            <%="⭐️サイト情報" %><br>
+            <%= "都道府県: #{campsite.prefecture.name}" %><br>
+            <%= "キャンプ場 style:" %>
+            <br><%= campsite.genre.name %> <br>
+             <%= "サイト形態: #{campsite.status.name}" %><br>
+            <%= "サイト紹介: #{campsite.text}" %> 
+          </h3>
+          <%end %>
+        </body>

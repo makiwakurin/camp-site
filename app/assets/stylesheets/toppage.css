@@ -288,3 +288,21 @@ footer {
   font-size: large;
 
 }
+
+.search-top {
+  display: flex;
+  background-color: white;
+}
+
+.search-second {
+  width: 20%;
+  margin-top: 15px;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+.search-center {
+  display: inline;
+  width: 28%;
+}

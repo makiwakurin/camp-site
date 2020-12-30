@@ -1,7 +1,1 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Campsite.create(name:'ふもとっぱらキャンプ場', text:'富士山を眺めることのできる大草原、とても広大な芝生エリアが広がる場内、木々に囲まれたキャンプサイトなど開放的にすごしていただけます。 テントサイトのほか、貸し別荘のような宿泊施設もあり初心者の方やファミリーまで気軽に利用していただけます。 家族や友人と、のんびりとした時間を過ごしてみてはいかがでしょう。', user_id: '1', genre_id:'5', image: open("#{Rails.root}/db/fixtures/ふもとっぱら.jpg"))

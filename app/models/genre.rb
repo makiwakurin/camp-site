@@ -1,13 +1,11 @@
 class Genre < ActiveHash::Base
   self.data = [
-    { id: 1, name: 'camp style' },
-    { id: 2, name: 'オートキャンプ' },
-    { id: 3, name: 'オートキャンプ不可' },
-    { id: 4, name: '首都圏近郊' },
-    { id: 5, name: 'ファミリー向け' }
+    { id: 1, name: '--' },
+    { id: 2, name: 'お風呂、シャワー有り' },
+    { id: 3, name: '温泉施設有り' },
   ]
 
   include ActiveHash::Associations
-  has_many :Campsites
+  has_many :campsites
   
   end

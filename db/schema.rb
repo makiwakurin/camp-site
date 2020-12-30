@@ -38,6 +38,9 @@ ActiveRecord::Schema.define(version: 2020_12_17_040650) do
     t.text "text", null: false
     t.bigint "user_id", null: false
     t.integer "genre_id", null: false
+    t.integer "prefecture_id", null: false
+    t.integer "status_id", null: false
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_campsites_on_user_id"
