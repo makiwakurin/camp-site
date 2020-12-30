@@ -66,3 +66,5 @@ gem 'active_hash'
 gem 'ransack'
 
 gem 'carrierwave'
+
+gem "aws-sdk-s3", require: false

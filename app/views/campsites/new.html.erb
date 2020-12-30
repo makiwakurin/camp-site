@@ -12,10 +12,12 @@
         </p>
         <%= f.file_field :image, id:"item-image" %>
       </div>
-      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
-      <%= f.text_field :name, placeholder: "campsite name" %>
-      <%= f.text_area :text, placeholder: "text", rows: "10" %>
-      <%= f.submit "シェアする" %>
+       <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "都道府県"}, {class:"genre-select"}) %><br>
+        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {include_blank:"場内設備"}, {class:"genre-select"}) %>
+      <%= f.collection_select(:status_id,  Status.all, :id, :name, {include_blank: "施設タイプ"}, {class:"genre-select"}) %>
+      <%= f.text_field :name, placeholder: "キャンプ場名" %>
+      <%= f.text_area :text, placeholder: "説明", rows: "10" %>
+      <%= f.submit "send" %>
     <% end %>
   </div>
 </div>

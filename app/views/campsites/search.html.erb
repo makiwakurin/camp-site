@@ -1,0 +1,23 @@
+
+   <div class='item-contents'>
+    <ul class='item-lists'>
+     <% @campsites.each do |campsite| %>
+      <li class='list'>
+          <%= link_to   campsite_path(campsite.id), method: :get do %> 
+      <div class='item-img-content'>
+          <%= image_tag campsite.image, class: "item-img" if campsite.image.attached? %>
+      <ul class="more_list">
+      </div>
+        <%end%>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= "⭐️SITE NAME"  %><br>
+            <%= campsite.name  %><br><br>
+            <%="⭐️サイト情報" %><br>
+            <%= "都道府県: #{campsite.prefecture.name}" %><br>
+            <%= "場内設備:" %>
+            <br><%= campsite.genre.name %> <br>
+             <%= "施設タイプ: #{campsite.status.name}" %><br><br>
+            <%= "サイト紹介: #{campsite.text}" %> 
+          </h3>
+          <%end %>

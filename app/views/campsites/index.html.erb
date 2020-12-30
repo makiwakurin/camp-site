@@ -5,15 +5,26 @@
     <title>Camp Site</title>
   </head>
   <body>
-    <header>
-    
-    </header>
+   <div class = "search-top">
+     <div class= "search-center">
+      <%= search_form_for @q, url: campsites_category_path do |f| %> 
+      <%= f.collection_select :status_id_eq, Status.where.not(id: 0), :id, :name, include_blank: "カテゴリー検索" %>
+      <%= f.submit '検索', class: "search" %>
+      <% end %>
+      </div>
+      <%= form_with(url: search_campsites_path,local: true, method: :get, class: "search-second") do |form| %> 
+      <%= form.text_field :keyword, placeholder: "検索", class: "search-input" %>
+      <%= form.submit "検索", class: "search" %>
+      <% end %>
+    </div>
 
     <div class="contents">
       <div class="first-view">
-        <%= image_tag  "富士山.jpeg", alt: "トップ画面", class: "top-image" %>
+        <%= image_tag  "トップページイラスト.png", alt: "トップ画面", class: "top-image" %>
       </div>
       <%# 商品一覧 %>
+   
+      
   <div class='item-contents'>
     <h1 class='title'>キャンプ場一覧</h1>
     <ul class='item-lists'>
@@ -27,12 +38,14 @@
         <%end%>
         <div class='item-info'>
           <h3 class='item-name'>
-           <%= "⭐️キャンプ場 style" %><br>
-            <%= campsite.genre.name %><br><br>
             <%= "⭐️SITE NAME"  %><br>
             <%= campsite.name  %><br><br>
             <%="⭐️サイト情報" %><br>
-            <%= campsite.text %>
+            <%= "都道府県: #{campsite.prefecture.name}" %><br>
+            <%= "場内設備:" %>
+            <br><%= campsite.genre.name %> <br>
+             <%= "施設タイプ: #{campsite.status.name}" %><br><br>
+            <%= "サイト紹介: #{campsite.text}" %> 
           </h3>
           <%end %>
           <div class='item-price'>
