@@ -50,7 +50,7 @@
           <% if current_user.liked_by?(campsite.id) %>
           <td>いいねを外す</td>
           <% else %>
-          <td>いいね</td>
+          <td><%= link_to 'いいね', create_like_path(campsite), method: :POST %></td>
           <% end %>
           <%end %>
           <div class='item-price'>
