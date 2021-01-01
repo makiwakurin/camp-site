@@ -9,7 +9,9 @@
      <div class= "search-center">
       <%= search_form_for @q, url: campsites_category_path do |f| %> 
       <%= f.collection_select :status_id_eq, Status.where.not(id: 0), :id, :name, include_blank: "カテゴリー検索" %>
-      <%= f.submit '検索', class: "search" %>
+      <%= button_tag :type => "submit", class: "btn" do %>
+      <i class="fas fa-search-plus"></i>
+      <%end%>
       <% end %>
       </div>
       <%= form_with(url: search_campsites_path,local: true, method: :get, class: "search-second") do |form| %> 
