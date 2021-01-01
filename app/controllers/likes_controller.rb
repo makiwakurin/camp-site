@@ -5,4 +5,9 @@ class LikesController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    Like.find_by(user_id: current_user.id, campsite_id: params[:id]).destroy
+    redirect_to root_path
+  end
+
 end
