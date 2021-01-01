@@ -4,7 +4,6 @@ class Campsite < ApplicationRecord
   belongs_to :prefecture
   belongs_to :status
   belongs_to :user
-  belongs_to :category
   has_one_attached :image
 
   validates :name,  presence: true
