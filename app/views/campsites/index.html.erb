@@ -47,6 +47,11 @@
              <%= "施設タイプ: #{campsite.status.name}" %><br><br>
             <%= "サイト紹介: #{campsite.text}" %> 
           </h3>
+          <% if current_user.liked_by?(campsite.id) %>
+          <td>いいねを外す</td>
+          <% else %>
+          <td>いいね</td>
+          <% end %>
           <%end %>
           <div class='item-price'>
             <span><%= %><br><br><%= %></span> 
