@@ -4,7 +4,7 @@ class CampsitesController < ApplicationController
   before_action :search_category_campsite, only: [:index, :category, :new, :show, :edit]
 
   def index
-    @campsites = Campsite.all
+    @campsites = Campsite.includes(:user).order('created_at DESC')
   end
 
   def new
