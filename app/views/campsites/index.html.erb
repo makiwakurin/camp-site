@@ -48,9 +48,9 @@
             <%= "サイト紹介: #{campsite.text}" %> 
           </h3>
           <% if current_user.liked_by?(campsite.id) %>
-          <td>いいねを外す</td>
+         <td><%= link_to 'いいねを解除', destroy_like_path(campsite), method: :DELETE %></td> <%= campsite.likes.count %></td>
           <% else %>
-          <td><%= link_to 'いいね', create_like_path(campsite), method: :POST %></td>
+          <td><%= link_to 'いいね', create_like_path(campsite), method: :POST %></td><%= campsite.likes.count %></td>
           <% end %>
           <%end %>
           <div class='item-price'>
