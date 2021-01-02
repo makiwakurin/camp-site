@@ -22,9 +22,9 @@
 }
 
 .fa-search-plus {
-  color: seagreen;
-  font-size: 70px;
-
+  color: silver;
+  font-size: 50px;
+  display: flex;
 }
 
 .btn {
@@ -42,4 +42,22 @@
   background: none;
   
 }
+
+.fa-beer {
+  color: gold;
+  font-size: 40px;
+}
+
+.fa-camera{
+  color: green;
+  font-size: 50px;
+}
+
+.fa-paper-plane {
+  font-size: 40px;
+  color: blue;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
 
