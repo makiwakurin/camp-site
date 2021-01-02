@@ -57,7 +57,19 @@
              <i class="fas fa-beer"></i>
             <%= "サイト紹介: #{campsite.text}" %> 
           </h3>
-            <%= render 'campsite', campsite: campsite %>
+          <% if user_signed_in? %>
+            <% if current_user.liked_by?(campsite.id) %>
+             <td><%= link_to  destroy_like_path(campsite), method: :DELETE do %>
+             </td> <%= campsite.likes.count %></td>
+            <%end%>
+            <i class="far fa-heart"></i>
+            <% else %>
+            <td><%= link_to  create_like_path(campsite), method: :POST do %>
+            </td><%= campsite.likes.count %></td>
+           <% end %>
+             <i class="fas fa-heart"></i>
+          <% end %>
+            <%end %>
            <%end%>
            <div class='item-price'>
             <span><%= %><br><br><%= %></span> 
