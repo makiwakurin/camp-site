@@ -512,7 +512,7 @@ ul li {
 }
 
 .row .grid-6 {
-  /* width: 48.2%; */
+ 
 }
 
 .row .grid-7 {
@@ -763,6 +763,7 @@ header.header div.header__bar.row h1.grid-6 {
 
 header.header div.header__bar.row h1.grid-6 a {
   display: block;
+  display: inline;
 }
 
 header.header div.header__bar.row div.grid-6 {

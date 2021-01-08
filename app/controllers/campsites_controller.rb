@@ -57,6 +57,7 @@ class CampsitesController < ApplicationController
     @campsites = Campsite.search(params[:keyword])
   end
 
+
   private 
 
   def campsite_params

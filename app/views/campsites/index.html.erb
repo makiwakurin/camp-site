@@ -15,7 +15,7 @@
       <% end %>
       </div>
       <%= form_with(url: search_campsites_path,local: true, method: :get, class: "search-second") do |form| %> 
-      <%= form.text_field :keyword, placeholder: "検索", class: "search-input" %>
+      <%= form.text_field :keyword, placeholder: "キーワード検索", class: "search-input" %>
          <%= button_tag :type => "submit", class: "btn" do %>
       <i class="fas fa-search-plus"></i>
       <%end%>
@@ -45,7 +45,7 @@
           <i class="fas fa-camera"></i>
             <%= "SITE NAME"  %><br>
             <%= campsite.name  %><br><br>
-            <i class="fas fa-beer"></i>
+            <i class="fab fa-apple"></i>
             <%="サイト情報" %><br>
             <i class="fas fa-beer"></i>
             <%= "都道府県: #{campsite.prefecture.name}" %><br>
@@ -53,23 +53,11 @@
             <%= "場内設備:" %>
             <br><%= campsite.genre.name %> <br>
             <i class="fas fa-beer"></i>
-             <%= "施設タイプ: #{campsite.status.name}" %><br><br>
-             <i class="fas fa-beer"></i>
-            <%= "サイト紹介: #{campsite.text}" %> 
+             <%= "施設タイプ:" %> 
+             <br><%= campsite.status.name %><br><br>
+            
           </h3>
-          <% if user_signed_in? %>
-            <% if current_user.liked_by?(campsite.id) %>
-             <td><%= link_to  destroy_like_path(campsite), method: :DELETE do %>
-             </td> <%= campsite.likes.count %></td>
-            <%end%>
-            <i class="far fa-heart"></i>
-            <% else %>
-            <td><%= link_to  create_like_path(campsite), method: :POST do %>
-            </td><%= campsite.likes.count %></td>
-           <% end %>
-             <i class="fas fa-heart"></i>
-          <% end %>
-            <%end %>
+      
            <%end%>
            <div class='item-price'>
             <span><%= %><br><br><%= %></span> 
@@ -81,16 +69,5 @@
         </div>
     </ul>
   </div>
-
-      <div class="bottom-content">
-        <form class="contact-form">
-          <h2 class="heading-name">メールで予約</h2>
-          <input type="text" placeholder="name" class="small-field">
-          <input type="text" placeholder="e-mail" class="small-field">
-          <textarea placeholder="message" class="large-field"></textarea>
-          <input type="submit" value="SEND" class="send">
-        </form>
-      </div>
-    </div>
   </body>
 </html>

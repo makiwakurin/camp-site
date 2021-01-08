@@ -18,13 +18,20 @@
         <%end%>
           <div class='item-info'>
           <h3 class='item-name'>
-            <%= "⭐️SITE NAME"  %><br>
+          <i class="fas fa-camera"></i>
+            <%= "SITE NAME"  %><br>
             <%= campsite.name  %><br><br>
-            <%="⭐️サイト情報" %><br>
+            <i class="fab fa-apple"></i>
+            <%="サイト情報" %><br>
+            <i class="fas fa-beer"></i>
             <%= "都道府県: #{campsite.prefecture.name}" %><br>
-            <%= "キャンプ場 style:" %>
+            <i class="fas fa-beer"></i>
+            <%= "場内設備:" %>
             <br><%= campsite.genre.name %> <br>
-             <%= "サイト形態: #{campsite.status.name}" %><br>
+            <i class="fas fa-beer"></i>
+             <%= "施設タイプ:" %> 
+             <br><%= campsite.status.name %><br><br>
+             <i class="fas fa-beer"></i>
             <%= "サイト紹介: #{campsite.text}" %> 
           </h3>
           <%end %>

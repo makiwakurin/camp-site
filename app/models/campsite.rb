@@ -7,7 +7,6 @@ class Campsite < ApplicationRecord
   has_one_attached :image
 
   has_many :likes
-  has_many :liked_users, through: :likes, source: :campsite
 
   validates :name,  presence: true
   validates :text,  presence: true

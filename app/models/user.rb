@@ -7,8 +7,7 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
   has_many :likes
-  has_many :liked_campsites, through: :likes, source: :campsite
-
+  
   def liked_by?(campsite_id)
     likes.where(campsite_id: campsite_id).exists?
   end
