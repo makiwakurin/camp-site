@@ -1,10 +1,10 @@
 class CampsitesController < ApplicationController
   before_action :set_campsite, only:[:destroy, :edit, :update, :show]
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :search_category_campsite, only: [:index, :category, :new, :show, :edit]
+  before_action :authenticate_user!, except: [:index, :category, :search, :show]
+  before_action :search_category_campsite, only: [:index, :category]
 
   def index
-    @campsites = Campsite.all
+    @campsites = Campsite.includes(:user).order('created_at DESC')
   end
 
   def new
@@ -45,14 +45,18 @@ class CampsitesController < ApplicationController
   end
 
   def category
-    @campsite = @q.result
-    status_id = params[:q][:status_id_eq]
-    @status = Status.find_by(id: status_id)
+      @campsite = @q.result
+      status_id = params[:q][:status_id_eq]
+  if @status = Status.find_by(id: status_id)
+    else
+      redirect_to root_path
+    end
   end
 
   def search
     @campsites = Campsite.search(params[:keyword])
   end
+
 
   private 
 

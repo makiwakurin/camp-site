@@ -54,6 +54,7 @@ li {
   display: flex;
   height: 60vh;
   justify-content: center;
+  background-color: gray;
 }
 
 .top-image {
@@ -170,7 +171,7 @@ footer {
 /* 商品一覧 */
 
 .item-contents {
-  background-color: #FFF;
+  background-color:gray;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -196,12 +197,13 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: gray;
 }
 
 .item-lists>.list {
   width: 37vh;
   padding: 1vw;
-  background-color: #FFF;
+  background-color:gray;
 }
 
 
@@ -291,7 +293,7 @@ footer {
 
 .search-top {
   display: flex;
-  background-color: white;
+  background-color: gray;
 }
 
 .search-second {
@@ -306,3 +308,4 @@ footer {
   display: inline;
   width: 28%;
 }
+

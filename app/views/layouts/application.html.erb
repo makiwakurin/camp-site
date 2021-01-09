@@ -4,7 +4,7 @@
     <title>CampSite</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://kit.fontawesome.com/91fc616da2.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,7 +12,7 @@
   <body>
        <header class="header">
       <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">Camp Site</a></h1>
+        <h1 class="grid-6"><a href="/">local camp</a></h1>
         <% if user_signed_in? %>
         <div class="user_nav grid-6">
           <span><%= current_user.nickname %>
@@ -23,7 +23,9 @@
               </li>
             </ul>
           </span>
-            <%= link_to "シェア",   new_campsite_path, class: "post" %>
+          <%= link_to  new_campsite_path, class: 'btn btn-default' do %>
+          <i class="fas fa-paper-plane"></i>
+          <%end%>
           </div>
         <% else %>
           <div class="grid-6">

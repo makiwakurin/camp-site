@@ -9,13 +9,17 @@
      <div class= "search-center">
       <%= search_form_for @q, url: campsites_category_path do |f| %> 
       <%= f.collection_select :status_id_eq, Status.where.not(id: 0), :id, :name, include_blank: "カテゴリー検索" %>
-      <%= f.submit '検索', class: "search" %>
+      <%= button_tag :type => "submit", class: "btn" do %>
+      <i class="fas fa-search-plus"></i>
+      <%end%>
       <% end %>
       </div>
       <%= form_with(url: search_campsites_path,local: true, method: :get, class: "search-second") do |form| %> 
-      <%= form.text_field :keyword, placeholder: "検索", class: "search-input" %>
-      <%= form.submit "検索", class: "search" %>
-      <% end %>
+      <%= form.text_field :keyword, placeholder: "キーワード検索", class: "search-input" %>
+         <%= button_tag :type => "submit", class: "btn" do %>
+      <i class="fas fa-search-plus"></i>
+      <%end%>
+      <%end%>
     </div>
 
     <div class="contents">
@@ -38,17 +42,24 @@
         <%end%>
         <div class='item-info'>
           <h3 class='item-name'>
-            <%= "⭐️SITE NAME"  %><br>
+          <i class="fas fa-camera"></i>
+            <%= "SITE NAME"  %><br>
             <%= campsite.name  %><br><br>
-            <%="⭐️サイト情報" %><br>
+            <i class="fab fa-apple"></i>
+            <%="サイト情報" %><br>
+            <i class="fas fa-beer"></i>
             <%= "都道府県: #{campsite.prefecture.name}" %><br>
+            <i class="fas fa-beer"></i>
             <%= "場内設備:" %>
             <br><%= campsite.genre.name %> <br>
-             <%= "施設タイプ: #{campsite.status.name}" %><br><br>
-            <%= "サイト紹介: #{campsite.text}" %> 
+            <i class="fas fa-beer"></i>
+             <%= "施設タイプ:" %> 
+             <br><%= campsite.status.name %><br><br>
+            
           </h3>
-          <%end %>
-          <div class='item-price'>
+      
+           <%end%>
+           <div class='item-price'>
             <span><%= %><br><br><%= %></span> 
             <div class='star-btn'>
               <%# <%= image_tag "star.png", class:"star-icon" %> 
@@ -58,16 +69,5 @@
         </div>
     </ul>
   </div>
-
-      <div class="bottom-content">
-        <form class="contact-form">
-          <h2 class="heading-name">メールで予約</h2>
-          <input type="text" placeholder="name" class="small-field">
-          <input type="text" placeholder="e-mail" class="small-field">
-          <textarea placeholder="message" class="large-field"></textarea>
-          <input type="submit" value="SEND" class="send">
-        </form>
-      </div>
-    </div>
   </body>
 </html>

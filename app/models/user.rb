@@ -6,4 +6,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, presence: true
+  has_many :likes
+  has_many :comments
+  
+  def liked_by?(campsite_id)
+    likes.where(campsite_id: campsite_id).exists?
+  end
 end
