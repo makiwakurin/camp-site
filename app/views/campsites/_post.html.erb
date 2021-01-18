@@ -5,7 +5,7 @@
             <i class="far fa-heart" ></i>
             <%end%>
             <% else %>
-            <td><%= link_to  create_like_path(@campsite.id), method: :POST do %>
+            <td><%= link_to  create_like_path(@campsite.id), method: :POST, remote: true do %>
             </td><%= @campsite.likes.count %></td>
              <i class="fas fa-heart"></i>
               <% end %>
