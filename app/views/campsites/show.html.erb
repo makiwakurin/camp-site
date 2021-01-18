@@ -31,7 +31,10 @@
              <i class="fas fa-beer"></i>
             <%= "サイト紹介: #{@campsite.text}" %> 
             <br><br>
+
+            <div id ="campsite_<%= @campsite.id %>">
              <%= render 'post', campsite: @campsite %>
+             </div>
    </div>
             <div class="container">
             <% if current_user %>
