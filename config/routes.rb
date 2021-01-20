@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "campsites#index"
   get '/campsites/category', to: "campsites#category"
+  get '/campsites/:id/:name' , to: "campsites#show", as: 'campsites_show'
   resources :campsites do
     resources :comments, only: [:new, :create]
     collection do
