@@ -9,6 +9,7 @@ class Campsite < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  
   validates :name,  presence: true
   validates :text,  presence: true
   validates :image, presence: true
