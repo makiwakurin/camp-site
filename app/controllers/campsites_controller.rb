@@ -42,9 +42,9 @@ class CampsitesController < ApplicationController
   end
 
   def show
+    @review = Review.new
     @comment = Comment.new
     @comments = @campsite.comments.includes(:user)
-
   end
 
   def category

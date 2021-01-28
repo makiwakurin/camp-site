@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/campsites/:id/:name' , to: "campsites#show", as: 'campsites_show'
   resources :campsites do
     resources :comments, only: [:new, :create]
+    resources :reviews, only: [:index, :create]
     collection do
       get 'search'
     end
