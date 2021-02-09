@@ -42,6 +42,7 @@ class CampsitesController < ApplicationController
   end
 
   def show
+    @campsite = Campsite.find(params[:id])
     @review = Review.new
     @comment = Comment.new
     @comments = @campsite.comments.includes(:user)
