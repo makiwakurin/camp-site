@@ -33,10 +33,10 @@
             <br><br>
 
             <div id ="campsite_<%= @campsite.id %>">
-             <%= render 'campsites/post', campsite: @campsite %>
-             </div>
-             <%= render 'reviews/form', review: @review, campsite: @campsite %>
-   </div>
+              <%= render 'campsites/post', campsite: @campsite %>
+              </div>
+              <%= render 'reviews/form', review: @review, campsite: @campsite %>
+            </div>
             <div class="container">
             <% if current_user %>
              <%= form_with model: [@campsite, @comment], local: true do |f| %>
