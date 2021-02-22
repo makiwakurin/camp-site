@@ -1,23 +1,32 @@
 // Place all the styles related to the campsites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 // likes.scss
 
-.like-link {
-  text-decoration: none;
+
+
+
+.star-rating {
+  position: relative;
+  width: 5em;
+  height: 1em;
+  font-size: 25px;
+}
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #ffcc33;
+}
+.star-rating-back {
+  color: #ccc;
 }
 
-.like-link:hover {
-  background-color: #fff!important;
+.average-score {
+  display: flex;
 }
-
-.like-btn {
-  font-size: 15px;
-  color: #808080;
-}
- 
-.unlike-btn {
-  font-size: 15px;
-  color: #e54747;
+.average-score-display {
+  font-size: 20px;
+  margin: 15px;
 }

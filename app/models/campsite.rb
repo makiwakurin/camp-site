@@ -6,8 +6,10 @@ class Campsite < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
-  has_many :likes
-  has_many :comments
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+  
   validates :name,  presence: true
   validates :text,  presence: true
   validates :image, presence: true
@@ -19,6 +21,21 @@ class Campsite < ApplicationRecord
       Campsite.where('text Like(?)', "%#{search}%")
     else
       Campsite.all
+    end
+  end
+
+  def avg_score
+    unless self.reviews.empty?
+      reviews.average(:score).round(1).to_f
+    else
+      0.0
+    end
+  end
+  def review_score_percentage
+    unless self.reviews.empty?
+      reviews.average(:score).round(1).to_f*100/5
+    else
+      0.0
     end
   end
 end

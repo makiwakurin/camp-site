@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/campsites/category', to: "campsites#category"
   resources :campsites do
     resources :comments, only: [:new, :create]
+    resources :reviews, only: [:index, :create]
     collection do
       get 'search'
     end

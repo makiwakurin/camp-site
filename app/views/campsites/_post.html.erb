@@ -2,12 +2,14 @@
             <% if current_user.liked_by?(@campsite.id) %>
              <div><%= link_to  destroy_like_path(@campsite.id), method: :DELETE, remote: true do %>
              <%= @campsite.likes.count %></div>
-            <i class="far fa-heart" ></i>
+            <i class="far fa-heart unlike-btn" ></i>
             <%end%>
             <% else %>
             <div><%= link_to  create_like_path(@campsite.id), method: :POST, remote: true do %>
             <%= @campsite.likes.count %></div>
-             <i class="fas fa-heart"></i>
+             <i class="fas fa-heart like-btn"></i>
               <% end %>
              <% end %>
             <%end %>
+
+       
